@@ -17,6 +17,7 @@ public class Line extends BaseEntity {
     private LocalTime startTime;
     private LocalTime endTime;
     private int intervalTime;
+    private int charge;
     @Embedded
     private LineStations lineStations = new LineStations();
 
@@ -73,6 +74,10 @@ public class Line extends BaseEntity {
 
     public int getIntervalTime() {
         return intervalTime;
+    }
+
+    public int getCharge() {
+        return charge;
     }
 
     public LineStations getLineStations() {

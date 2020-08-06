@@ -1,12 +1,10 @@
 package wooteco.subway.maps.map.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
-import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -59,9 +57,9 @@ class SubwayPathTest {
     @Test
     @DisplayName("추가요금 계산 - 노선별 추가요금이 없는 노선을 11km 이용")
     void calculateFare_IfNotExistFareByLine() {
-        when(lineNumberTwo.getFare()).thenReturn(0);
-        when(lineNumberFive.getFare()).thenReturn(0);
+        when(lineNumberTwo.getCharge()).thenReturn(0);
+        when(lineNumberFive.getCharge()).thenReturn(0);
 
-        assertThat(subwayPath.calculateFare()).isEqualTo(1350);
+        assertThat(subwayPath.calculateFare()).isEqualTo(1_350);
     }
 }
